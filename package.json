@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "validate": "renovate-config-validator default.json"
+    "validate": "npx --yes --package renovate@$(node -p \"require('./package.json').devDependencies.renovate\") renovate-config-validator --strict default.json"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "renovate": "^37.107.0"
+    "renovate": "44.181.5"
+  },
+  "engines": {
+    "node": "^24.11.0"
   }
 }
