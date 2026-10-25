@@ -9,6 +9,9 @@
   "labels": [
     "dependencies"
   ],
+  "updateNotScheduled": false,
+  "rebaseWhen": "conflicted",
+  "prConcurrentLimit": 3,
   "packageRules": [
     {
       "matchUpdateTypes": [
@@ -17,6 +20,37 @@
       "groupName": "dependencies (patch)",
       "automerge": true,
       "automergeStrategy": "squash"
+    },
+    {
+      "matchUpdateTypes": [
+        "minor"
+      ],
+      "groupName": "dependencies (minor)"
+    },
+    {
+      "matchManagers": [
+        "github-actions"
+      ],
+      "groupName": "github-actions"
+    },
+    {
+      "matchManagers": [
+        "github-actions"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "digest"
+      ],
+      "automerge": true,
+      "automergeStrategy": "squash"
+    },
+    {
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "minimumReleaseAge": "3 days"
     },
     {
       "matchPackageNames": [
