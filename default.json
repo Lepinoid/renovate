@@ -48,9 +48,29 @@
     {
       "matchUpdateTypes": [
         "minor",
-        "patch"
+        "patch",
+        "digest"
       ],
       "minimumReleaseAge": "3 days"
+    },
+    {
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "minimumReleaseAge": "7 days"
+    },
+    {
+      "matchUpdateTypes": [
+        "digest"
+      ],
+      "minimumReleaseAgeBehaviour": "timestamp-optional"
+    },
+    {
+      "matchDatasources": [
+        "git-refs",
+        "java-version"
+      ],
+      "minimumReleaseAgeBehaviour": "timestamp-optional"
     },
     {
       "matchPackageNames": [
